@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .App-logo {
@@ -14,8 +16,8 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  /* background-color: #282c34;
+  min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -67,13 +69,47 @@ img {
   justify-content: center;
   padding: 16px;
   margin: 30px 20% 20%;
-
   font-size: calc(10px + 2vmin);
-  /* color: white; */
 }
 .btn{
   background: #fb641b;
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 20%);
     border: none;
     color: #fff;
+}
+
+
+.cart-icon {
+  display: flex;
+  text-align: end;
+  margin-right: 2rem;
+  align-items: center;
+  position: relative;
+  justify-content: flex-end;
+}
+
+.cart-icon img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.cart-icon p {
+  position: absolute;
+  width: 1.2rem;
+  height: 1.2rem;
+  right: -0.2rem;
+  top: -0.1rem;
+  border-radius: 50%;
+  background: #99cbf7;
+  color: #fff;
+  box-sizing: border-box;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--main-color);
+}
+.search{
+  margin-left: 100px;
+    margin-right: 100px;
 }

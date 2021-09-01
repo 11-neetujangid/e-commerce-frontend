@@ -1,8 +1,11 @@
 import axios from 'axios';
-import { setProduct, signUpUser, setProductDetails } from '../Actions/action';
+import { setProduct, signUpUser, setProductDetails,addToCart } from '../Actions/action';
 
 const url = 'https://fakestoreapi.com/products';
-const userUrl = "http://localhost:7002/users";
+const userUrl = 'https://fakestoreapi.com/users';
+const login = 'https://fakestoreapi.com/auth/login'
+const cartUrl = 'https://fakestoreapi.com/carts'
+
 
 export const getProducts = () => async (dispatch, getState) => {
     try {
@@ -18,7 +21,7 @@ export const getProducts = () => async (dispatch, getState) => {
 export const addUser = (user) => async (dispatch, getState) => {
     console.log(user);
     try {
-        const response = await axios.post(`${userUrl}/add`, user);
+        const response = await axios.post(`${userUrl}`, user);
         console.log(response.data);
         dispatch(signUpUser(response.data));
 
@@ -30,10 +33,12 @@ export const addUser = (user) => async (dispatch, getState) => {
 //signin users-->
 export const loginUser = (user) => async (dispatch, getState) => {
     console.log(user)
+    
     try {
-        const response = await axios.post(`${userUrl}/signin`, user);
+        
+        const response = await axios.post(`${login}`,user);
         console.log(response.data);
-        // dispatch(SignIn(response.data));
+        // dispatch(signIn(response.data));
 
     } catch (err) {
         console.log(err);
@@ -49,4 +54,51 @@ export const getProductDetails = (Id) => async (dispatch, getState) => {
     } catch (err) {
         console.log(err);
     }
+}
+
+export const addCart = (id) => async (dispatch, getState) => {
+    console.log(id);
+    console.log(`${cartUrl}/${id}`)
+
+    try {
+        const response = await axios.get(`${cartUrl}/${id}`);
+        console.log(response.data)
+        dispatch(addToCart(response.data));
+    } catch (error) {
+        console.log(error);
+    }
+
+}
+export const limitFilter = (limit) => async (dispatch, getState) => {
+    console.log(`${url}?limit=${limit}`)
+    try {
+        const response = await axios.get(`${url}?limit=${limit}`);
+        console.log(response.data)
+        dispatch(setProduct(response.data));
+    } catch (error) {
+        console.log(error);
+    }
+
+}
+export const sortFilter = (sort) => async (dispatch, getState) => {
+    console.log(`${url}?sort=${sort}`)
+    try {
+        const response = await axios.get(`${url}?sort=${sort}`);
+        console.log(response.data)
+        dispatch(setProduct(response.data));
+    } catch (error) {
+        console.log(error);
+    }
+
+}
+export const categoryFilter = (category) => async (dispatch, getState) => {
+    console.log(`${url}/category/${category}`)
+    try {
+        const response = await axios.get(`${url}/category/${category}`);
+        console.log(response.data)
+        dispatch(setProduct(response.data));
+    } catch (error) {
+        console.log(error);
+    }
+
 }

@@ -1,4 +1,3 @@
-
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -12,6 +11,9 @@ import ProductDetails from './Pages/ProductDetails';
 import Signup from './Pages/SignUp';
 import { PublicRoute } from './Routes/PublicRoute';
 import Signin from './Pages/Login';
+import { PrivateRoute } from './Routes/PrivateRoute';
+import CheckoutPage from './Pages/CheckoutPage';
+
 
 const store = createStore(reducer, applyMiddleware(thunk));
 function App() {
@@ -23,10 +25,12 @@ function App() {
         </header>
         <Router>
           <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route exact path="/details/:id" component={ProductDetails} />
+            <PublicRoute exact path="/" component={HomePage} />
+            <PublicRoute exact path="/details/:id" component={ProductDetails} />
             <PublicRoute exact path="/signup" component={Signup} />
             <PublicRoute exact path="/signin" component={Signin} />
+            <Route exact path="/check" component={CheckoutPage} />
+
           </Switch>
         </Router>
       </div>

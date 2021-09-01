@@ -17,34 +17,27 @@ const Signin = () => {
         console.log(login)
 
     }
-
-    const loginUserDetails = () => {
-        
+    const loginUserDetails = (e) => {
+        e.preventdefault();
         dispatch(loginUser(login))
-        history.push('/');
+        console.log("done")
+        // history.push('/');
     }
     return (
         <div>
-            {/* <from>
-                <h2>Login Page</h2>
-                Email <input name="email" type="email" onChange={(e) => onchangeInput(e)} placeholder="Enter your email id" /><br></br>
-                Password<input name="password" type="password" onChange={onchangeInput} placeholder="Enter your password" /><br></br>
-                <Button variant="primary" onClick={() => editUserDetails()}>Login</Button>
-
-            </from> */}
             <form>
-                <div className="form">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" name ="email" aria-describedby="emailHelp" placeholder="Enter email" onChange={(e) => onchangeInput(e)} />
+                <div className ="form">
+                    <div className="form-group">
+                        <label htmlFor="exampleInputEmail1">Email address</label>
+                        <input type="email" className ="form-control" name ="email" aria-describedby="emailHelp" placeholder="Enter email" onChange={(e) => onchangeInput(e)} />
                     </div>
                     <div>
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" name ="password" placeholder="Password" onChange={(e) => onchangeInput(e)} />
+                        <label htmlFor="exampleInputPassword1">Password</label>
+                        <input type="password" className ="form-control" name ="password" placeholder="Password" onChange={(e) => onchangeInput(e)} />
                     </div>
 
                     <div><br/>
-                        <button type="submit" class="btn btn-primary" onClick={() => loginUserDetails()}>Submit</button>
+                        <button type="submit" className ="btn btn-primary" onClick={() => loginUserDetails()}>Submit</button>
                     </div>
                 </div>
             </form>
