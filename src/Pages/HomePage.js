@@ -41,12 +41,12 @@ const HomePage = () => {
     return (
         <><br />
             <div className="search">
-                <div class="input-group">
-                    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                <div className="input-group">
+                    <input type="search" className="form-control rounded" placeholder="Search" aria-label="Search"
                     name = "search" onChange={(e) => onValueChange(e)} aria-describedby="search-addon" />
-                    <button type="button" class="btn btn-outline-primary" onClick={() => onClickSearch()} >limit</button>
-                    <button type="button" class="btn btn-outline-primary" onClick={() => onClickSearch2()} >sort</button>
-                    <button type="button" class="btn btn-outline-primary" onClick={() => onClickSearch3()} >category</button>
+                    <button type="button" className="btn btn-outline-primary" onClick={() => onClickSearch()} >limit</button>
+                    <button type="button" className="btn btn-outline-primary" onClick={() => onClickSearch2()} >sort</button>
+                    <button type="button" className="btn btn-outline-primary" onClick={() => onClickSearch3()} >category</button>
 
                 </div>
             </div>
@@ -57,7 +57,7 @@ const HomePage = () => {
                 {
                     product.map(record => (
                         <div className='card' key={record.id} >
-                            <tr key={record.id}>
+                           
                                 <h3>{record.category}</h3>
                                 <div onClick={() => onClickProduct(record.id)}>
                                     <img src={record.image} alt='img' />
@@ -65,7 +65,7 @@ const HomePage = () => {
                                 <p>{record.price}</p>
                                 <p>{record.title}</p>
                                 <p>rating: {record.rating.rate} {record.rating.count}</p>
-                            </tr>
+                           
                         </div>
 
                     ))

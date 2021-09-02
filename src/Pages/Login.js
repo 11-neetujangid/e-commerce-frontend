@@ -11,36 +11,39 @@ const Signin = () => {
     const login = useSelector((state => state.login));
     console.log(login);
 
-
     const onchangeInput = (e) => {
         dispatch(signInUser({ ...login, [e.target.name]: e.target.value }));
         console.log(login)
 
     }
     const loginUserDetails = (e) => {
-        e.preventdefault();
-        dispatch(loginUser(login))
-        console.log("done")
-        // history.push('/');
+      
+        if (login.email === '' || login.password === '') {
+            alert("fields are required");
+        } else {
+            dispatch(loginUser(login))
+            console.log("done");
+        }
+       
     }
     return (
         <div>
-            <form>
-                <div className ="form">
+            <form onSubmit={() => loginUserDetails()}>
+                <div className="form">
                     <div className="form-group">
-                        <label htmlFor="exampleInputEmail1">Email address</label>
-                        <input type="email" className ="form-control" name ="email" aria-describedby="emailHelp" placeholder="Enter email" onChange={(e) => onchangeInput(e)} />
+                        <label htmlFor="exampleInput1">Email address</label>
+                        <input type="text" className="form-control" name="username" aria-describedby="usernameHelp" placeholder="Enter username" onChange={(e) => onchangeInput(e)} />
                     </div>
                     <div>
                         <label htmlFor="exampleInputPassword1">Password</label>
-                        <input type="password" className ="form-control" name ="password" placeholder="Password" onChange={(e) => onchangeInput(e)} />
+                        <input type="password" className="form-control" name="password" placeholder="Password" onChange={(e) => onchangeInput(e)} />
                     </div>
-
-                    <div><br/>
-                        <button type="submit" className ="btn btn-primary" onClick={() => loginUserDetails()}>Submit</button>
-                    </div>
+                   
                 </div>
+            
             </form>
+            <button type="submit" className="btn btn-primary" onClick={() => loginUserDetails()}>Submit</button>
+          
         </div>
     )
 }

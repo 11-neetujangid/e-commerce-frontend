@@ -13,7 +13,7 @@ import { PublicRoute } from './Routes/PublicRoute';
 import Signin from './Pages/Login';
 import { PrivateRoute } from './Routes/PrivateRoute';
 import CheckoutPage from './Pages/CheckoutPage';
-
+import Logout from './Pages/Logout';
 
 const store = createStore(reducer, applyMiddleware(thunk));
 function App() {
@@ -25,11 +25,12 @@ function App() {
         </header>
         <Router>
           <Switch>
-            <PublicRoute exact path="/" component={HomePage} />
-            <PublicRoute exact path="/details/:id" component={ProductDetails} />
-            <PublicRoute exact path="/signup" component={Signup} />
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/details/:id" component={ProductDetails} />
+            <Route exact path="/signup" component={Signup} />
             <PublicRoute exact path="/signin" component={Signin} />
-            <Route exact path="/check" component={CheckoutPage} />
+            <PrivateRoute exact path="/check" component={CheckoutPage} />
+            <PrivateRoute exact path="/logout" component={Logout} />
 
           </Switch>
         </Router>
