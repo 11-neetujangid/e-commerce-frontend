@@ -1,0 +1,27 @@
+1) If user is not logged in then show Login and Signup in Navbar.
+
+2) If user is logged in then show user to Logout and Home page.
+
+3) Login Page:
+
+-> User will fill the login form then first it will check username, if username already exit 
+then it will compare the paasword if password is matched then it will generate a token,
+and if password is not matched then it will throw an error.(username and password is not matched).
+
+4) Home Page:
+
+-> Home page will show all the products and a serach bar user can search according to sort, limit,
+ category.
+
+->If user will choose any product then it will redirect to another page that is Product Details.
+
+5) Product Details:
+
+-> Product Details Page will show product details that the user has choosed the product.
+-> There are Two buttons: 1) Add to cart 2) Buy Now.
+
+-> If user click's on Add to cart then item will add into user cart.
+-> If user click's on Buy Now and user is not logged in then user will redirect to login page and after login redirect to Checkout Page.
+
+6) Checkout Page:
+-> Checkout Page will show the user cart details.

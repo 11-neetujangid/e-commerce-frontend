@@ -12,14 +12,14 @@ export const USER_LOGOUT = "USER_LOGOUT";
 export const setProduct = (payload) => ({ type: SET_PRODUCTS, payload: payload });
 export const signUpUser = (payload) => ({ type: SIGNUP_USERS, payload: payload });
 export const signInUser = (payload) => ({ type: SIGNIN_USERS, payload: payload });
-export const setProductDetails = (payload) => (console.log(payload), { type: SET_PRODUCT_DETAILS, payload: payload });
-export const addToCart = (payload) => (console.log(payload), { type: ADD_TO_CART, payload: payload });
-export const filters = (payload) => (console.log(payload), { type: LIMIT, payload: payload });
+export const setProductDetails = (payload) => ({ type: SET_PRODUCT_DETAILS, payload: payload });
+export const addToCart = (payload) => ({ type: ADD_TO_CART, payload: payload });
+export const filters = (payload) => ({ type: LIMIT, payload: payload });
 export const signIn = (payload) => {
     console.log(payload.token)
     localStorage.setItem("token", payload.token);
     return { type: SIGNIN, payload }
 }
-export const BuyProduct = (payload) => (console.log(payload), { type: BUY_NOW, payload: payload });
+export const BuyProduct = (payload) => ({ type: BUY_NOW, payload: payload });
 
-export const userLogout = (payload) => (console.log(payload), { type: USER_LOGOUT, payload: payload });
+export const userLogout = (payload) => ({ type: USER_LOGOUT, payload: payload });

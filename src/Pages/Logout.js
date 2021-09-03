@@ -12,7 +12,7 @@ const Logout = () => {
         localStorage.removeItem('token');
         dispatch(userLogout());
         history.push('/signin')
-    },[])
+    },[dispatch])
     return (
         <h2>Logout</h2>
     )

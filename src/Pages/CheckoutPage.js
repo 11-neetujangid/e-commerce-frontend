@@ -2,6 +2,7 @@ import { useSelector } from "react-redux"
 
 const CheckoutPage = () => {
 
+    
     const buy = useSelector((state => state.buy));
     console.log(buy);
 

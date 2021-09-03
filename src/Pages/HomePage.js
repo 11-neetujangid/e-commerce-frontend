@@ -14,7 +14,7 @@ const HomePage = () => {
 
     useEffect(() => {
         dispatch(getProducts());
-    }, []);
+    }, [dispatch]);
     const product = useSelector((state) => state.products);
     console.log(product);
     const search = useSelector((state) => state.search);

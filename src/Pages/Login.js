@@ -1,11 +1,10 @@
-import { useHistory } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { signInUser } from "../Actions/action";
 import { loginUser } from "../services/api";
 
 
 const Signin = () => {
-    const history = useHistory();
+  
     const dispatch = useDispatch()
 
     const login = useSelector((state => state.login));

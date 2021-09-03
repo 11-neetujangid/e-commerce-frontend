@@ -15,7 +15,7 @@ const Signup = () => {
     }
     const addUserDetails = () => {
         dispatch(addUser(register));
-        history.push('/signin')
+        history.push('/signin');
     }
 
     return (

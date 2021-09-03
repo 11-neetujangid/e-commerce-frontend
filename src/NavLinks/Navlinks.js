@@ -26,14 +26,13 @@ const NavLinks = () => {
                             <Nav className="me-auto" ></Nav>
                             <Nav.Link href='/'>Home</Nav.Link>
                             <Nav.Link href='/signup'>Sign Up</Nav.Link>
-                            <Nav.Link href='/check'>Checkout</Nav.Link>
                             <Nav.Link href='/logout'>Logout</Nav.Link>
                         </Nav>
                         <div>
                             <Nav>
                                 <div className="cart-icon img">
                                     <span style={{ color: 'white' }}>Cart</span>
-                                    <img src={img} />
+                                    <img src={img} alt ="img"/>
                                 </div>
                             </Nav>
                         </div>

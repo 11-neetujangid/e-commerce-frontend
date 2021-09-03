@@ -33,9 +33,8 @@ export const addUser = (user) => async (dispatch, getState) => {
 //signin users-->
 export const loginUser = (user) => async (dispatch, getState) => {
     console.log(user)
-
     try {
-
+        
         const response = await axios.post(`${login}`, user);
         console.log(response.data);
         dispatch(signIn(response.data));
