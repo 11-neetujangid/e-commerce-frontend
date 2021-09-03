@@ -1,6 +1,7 @@
-import { SET_PRODUCTS, SIGNUP_USERS, SIGNIN_USERS, SET_PRODUCT_DETAILS,
-     ADD_TO_CART, LIMIT, SIGNIN ,USER_LOGOUT ,BUY_NOW
-    } from "../Actions/action"
+import {
+    SET_PRODUCTS, SIGNUP_USERS, SIGNIN_USERS, SET_PRODUCT_DETAILS,
+    ADD_TO_CART, LIMIT, SIGNIN, USER_LOGOUT, BUY_NOW
+} from "../Actions/action"
 
 
 const initialState = {
@@ -21,7 +22,7 @@ const initialState = {
     add: [],
     serach: '',
     token: localStorage.getItem("token"),
-    buy:[]
+    buy: []
 }
 const reducer = (state = initialState, action) => {
     switch (action.type) {
@@ -64,7 +65,7 @@ const reducer = (state = initialState, action) => {
                 add: action.payload,
 
             }
-            case BUY_NOW:
+        case BUY_NOW:
             console.log(action.payload);
             console.log("buy");
 

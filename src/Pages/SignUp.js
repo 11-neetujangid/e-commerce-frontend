@@ -23,28 +23,28 @@ const Signup = () => {
             <h2 >SignUP Page</h2>
             <form>
                 <div className="form">
-                
+
                     <div className="form-group">
                         <label htmlFor="exampleInputEmail1">Email address</label>
-                        <input type="email"  name= "email" className="form-control"  aria-describedby="emailHelp" placeholder="Enter email" onChange={(e) => onValueChange(e)} />
+                        <input type="email" name="email" className="form-control" aria-describedby="emailHelp" placeholder="Enter email" onChange={(e) => onValueChange(e)} />
                     </div>
                     <div className="form-group">
                         <label>Full Name</label>
-                        <input type="text"  name= "name" className="form-control" placeholder="Enter Name" onChange={(e) => onValueChange(e)} />
+                        <input type="text" name="name" className="form-control" placeholder="Enter Name" onChange={(e) => onValueChange(e)} />
                     </div>
                     <div className="form-group">
                         <label>Number</label>
-                        <input type="phone"  name= "number" className="form-control" placeholder="enter your mobile number" onChange={(e) => onValueChange(e)} />
+                        <input type="phone" name="number" className="form-control" placeholder="enter your mobile number" onChange={(e) => onValueChange(e)} />
                     </div>
                     <div className="form-group">
                         <label>Address</label>
-                        <input type="address"  name= "address" className="form-control" placeholder="enter your address" onChange={(e) => onValueChange(e)} />
+                        <input type="address" name="address" className="form-control" placeholder="enter your address" onChange={(e) => onValueChange(e)} />
                     </div>
                     <div className="form-group">
                         <label htmlFor="exampleInputPassword1">Password</label>
-                        <input type="password"  name= "password" className="form-control" placeholder="Password" onChange={(e) => onValueChange(e)} />
+                        <input type="password" name="password" className="form-control" placeholder="Password" onChange={(e) => onValueChange(e)} />
                     </div>
-                    <div><br/>
+                    <div><br />
                         <button type="submit" className="btn btn-primary" onClick={() => addUserDetails()}>Submit</button>
                     </div>
                 </div>

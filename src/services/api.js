@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { setProduct, signUpUser, setProductDetails,addToCart, signIn, BuyProduct } from '../Actions/action';
+import { setProduct, signUpUser, setProductDetails, addToCart, signIn, BuyProduct } from '../Actions/action';
 
 const url = 'https://fakestoreapi.com/products';
 const userUrl = 'https://fakestoreapi.com/users';
@@ -33,10 +33,10 @@ export const addUser = (user) => async (dispatch, getState) => {
 //signin users-->
 export const loginUser = (user) => async (dispatch, getState) => {
     console.log(user)
-    
+
     try {
-        
-        const response = await axios.post(`${login}`,user);
+
+        const response = await axios.post(`${login}`, user);
         console.log(response.data);
         dispatch(signIn(response.data));
 
@@ -59,7 +59,7 @@ export const getProductDetails = (Id) => async (dispatch, getState) => {
 export const addCart = (id) => async (dispatch, getState) => {
     console.log(id)
     try {
-        const response = await axios.post(`${cartUrl}`,id);
+        const response = await axios.post(`${cartUrl}`, id);
         console.log(response.data)
         dispatch(addToCart(response.data));
     } catch (error) {
@@ -67,10 +67,10 @@ export const addCart = (id) => async (dispatch, getState) => {
     }
 
 }
-export const buyNow = (details) => async (dispatch, getState) => {
-    console.log(details)
+export const buyNow = () => async (dispatch, getState) => {
+    console.log()
     try {
-        const response = await axios.get(`${cartUrl}`,details);
+        const response = await axios.get(`${cartUrl}`);
         console.log(response.data)
         dispatch(BuyProduct(response.data));
     } catch (error) {

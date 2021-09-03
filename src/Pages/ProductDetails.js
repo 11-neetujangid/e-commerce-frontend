@@ -32,7 +32,9 @@ const ProductDetails = () => {
         }
     }
     const clickBuyNow = () => {
-        dispatch(buyNow(details));
+        // dispatch(addCart(details.id));
+        dispatch(buyNow(details.id));
+
         history.push('/check')
     }
 
@@ -41,19 +43,19 @@ const ProductDetails = () => {
             <h1>Product details</h1>
             <div className='item-container'>
                 <div className='card'>
-                   
-                        <h3>{details.category}</h3>
-                        <p> description:</p>
-                        <p> {details.description}</p>
-                        <div>
-                            <img src={details.image} alt='img' />
-                        </div>
-                        <p> Price:{details.price}</p>
-                        <p> Rating</p>
-                        
-                        <p> {details.title}</p>
 
-                   
+                    <h3>{details.category}</h3>
+                    <p> description:</p>
+                    <p> {details.description}</p>
+                    <div>
+                        <img src={details.image} alt='img' />
+                    </div>
+                    <p> Price:{details.price}</p>
+                    <p> Rating</p>
+
+                    <p> {details.title}</p>
+
+
                     <Button variant="warning" style={{ color: "white" }}
                         onClick={() => clickBuyNow()}
                     >Buy Now</Button><br />

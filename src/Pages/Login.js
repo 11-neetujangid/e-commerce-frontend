@@ -17,14 +17,14 @@ const Signin = () => {
 
     }
     const loginUserDetails = (e) => {
-      
+
         if (login.email === '' || login.password === '') {
             alert("fields are required");
         } else {
             dispatch(loginUser(login))
             console.log("done");
         }
-       
+
     }
     return (
         <div>
@@ -38,12 +38,12 @@ const Signin = () => {
                         <label htmlFor="exampleInputPassword1">Password</label>
                         <input type="password" className="form-control" name="password" placeholder="Password" onChange={(e) => onchangeInput(e)} />
                     </div>
-                   
+
                 </div>
-            
+
             </form>
             <button type="submit" className="btn btn-primary" onClick={() => loginUserDetails()}>Submit</button>
-          
+
         </div>
     )
 }
